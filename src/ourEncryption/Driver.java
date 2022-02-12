@@ -181,13 +181,16 @@ public class Driver extends Application {
 
     public static void ourDecryption(File ef, File ftd) throws IOException {
 //        Hill.decrypt(ef , new File("./temp"));
+        //        RC4.encrypt(ftd, new File("./temp"));
+
         VigenereCipher.decrypt(ftd, new File("./temp"));
         HuffmanEncryption.decrypt(new File("./temp"), ftd);
     }
 
     public static void ourEncryption(File planeFile, File fileToEncrypt) throws IOException {
         HuffmanEncryption.encrypt(planeFile, new File("./temp"));
-        VigenereCipher.encrypt(new File("./temp"), fileToEncrypt);
+        VigenereCipher.encrypt(new File("./temp"), new File("./temp"));
+//        RC4.encrypt(new File("./temp"), fileToEncrypt);
 //        Hill.encrypt(new File("./temp")  , fileToEncrypt);
     }
 
